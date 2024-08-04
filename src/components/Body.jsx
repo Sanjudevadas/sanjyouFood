@@ -11,6 +11,7 @@ Search
         <RestaurentCard/>
         <RestaurentCard/>
         <RestaurentCard/>
+        <RestaurentCard/>
       </div>
     </div>
   );

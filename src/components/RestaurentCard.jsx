@@ -2,7 +2,9 @@
 
 const RestaurentCard = () => {
   return (
-    <div>RestaurentCard</div>
+    <div className="res-card">
+    <h1>Meghna Foods</h1>
+    </div>
   )
 }
 

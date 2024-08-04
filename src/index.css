@@ -45,4 +45,37 @@ body{
   .nav-items li:hover {
     color: #006d8b;
   }
+  /* styles.css */
+.search{
+    padding: 10px;
+}
+.res-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+    padding: 20px;
+    width: 300px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .res-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .res-card h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    text-align: center;
+  }
   

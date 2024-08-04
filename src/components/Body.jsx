@@ -9,6 +9,8 @@ Search
 
       <div className="res-container">
         <RestaurentCard/>
+        <RestaurentCard/>
+        <RestaurentCard/>
       </div>
     </div>
   );

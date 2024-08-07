@@ -56,62 +56,54 @@ body{
 /* styles.css */
 /* styles.css */
 /* styles.css */
-.res-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin: 20px;
-    padding: 20px;
-   /*width: 250px;  Adjust the width for a vertical card */
-   /* height: 400px;  Adjust the height for a vertical card */
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .res-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-cursor: pointer;  
+/* Add this to your CSS file (e.g., styles.css) */
 
+.res-card {
+  width: 250px;
+  margin: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.res-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.res-logo {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.res-card h3 {
+  margin: 10px 0 5px 0;
+  font-size: 15px;
   
-  .res-card img {
-    width: 100%;
-    height: 200px; /* Adjust height as needed */
-    object-fit: cover;
-    border-radius: 8px;
-   
-  }
-  
-  .res-card h3 {
-    font-size: 20px;
-    color: #333;
-    margin: 10px 0 5px;
-    font-weight: 700;
-  }
-  
-  .res-card h4 {
-    font-size: 16px;
-    color: #777;
-    margin: 5px 0;
-  }
-  
-  .res-card h5 {
-    font-size: 14px;
-    color: #ff9900;
-    margin: 5px 0;
-  }
-  .res-container{
-     display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   width: 100%;
-   
-  }
+  color: #b66100;
+}
+
+.res-card h4 {
+  margin: 8px 0;
+  font-size: 13px;
+  color: #777;
+}
+.res-card h5 {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #181818;
+}
+
+.res-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
   .filter-btn{
     margin: 10px;

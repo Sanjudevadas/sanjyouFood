@@ -1,6 +1,12 @@
 import RestaurentCard from "./RestaurentCard";
 //import { useState } from "react";
+import { useEffect } from "react";
 const Body = () => {
+
+useEffect(()=>{
+  console.log("use Effect Called")
+},[]);
+
   return (
     <div className="body-container">
       <div className="filter">

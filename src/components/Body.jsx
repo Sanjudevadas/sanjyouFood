@@ -1,5 +1,6 @@
-import  { useEffect, useState } from 'react';
-import RestaurentCard from './RestaurentCard';
+import { useEffect, useState } from "react";
+import RestaurentCard from "./RestaurentCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -10,27 +11,37 @@ const Body = () => {
 
   const fetchData = async () => {
     const Data = await fetch(
-      'https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8496217&lng=81.0072193&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8496217&lng=81.0072193&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await Data.json();
     console.log(json);
     setListOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || []
     );
   };
 
-  console.log('body rendered');
+  console.log("body rendered");
+
+  if (listOfRestaurants.length === 0) {
+    return (
+      <>
+<Shimmer/>
+      </>
+    );
+  }
+
   return (
     <div className="body-container">
       <div className="filter">
         <button
           onClick={() => {
-            console.log('Button Clicked');
+            console.log("Button Clicked");
           }}
           className="filter-btn"
           onMouseOver={() => {
-            console.log('Mouse over');
+            console.log("Mouse over");
           }}
         >
           Top rated Restaurants

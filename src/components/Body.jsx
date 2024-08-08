@@ -22,8 +22,8 @@ const Body = () => {
     );
   };
 
-  console.log("body rendered");
-
+ 
+//Conditional Rendering
   if (listOfRestaurants.length === 0) {
     return (
       <>

@@ -5,6 +5,8 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
 
+  const [searchResult, setSearchResult] = useState("");
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -15,19 +17,18 @@ const Body = () => {
     );
 
     const json = await Data.json();
-    console.log(json);
+   
     setListOfRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || []
     );
   };
 
- 
-//Conditional Rendering
+  //Conditional Rendering
   if (listOfRestaurants.length === 0) {
     return (
       <>
-<Shimmer/>
+        <Shimmer />
       </>
     );
   }
@@ -35,14 +36,32 @@ const Body = () => {
   return (
     <div className="body-container">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchResult}
+            onChange={(e) => {
+              setSearchResult(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              console.log(searchResult);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           onClick={() => {
-            console.log("Button Clicked");
+            const filteredList = listOfRestaurants.filter(
+              (res) => res.info.avgRating > 4.3
+            );
+            setListOfRestaurants(filteredList);
           }}
           className="filter-btn"
-          onMouseOver={() => {
-            console.log("Mouse over");
-          }}
+         
         >
           Top rated Restaurants
         </button>

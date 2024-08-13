@@ -4,7 +4,7 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
-
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchResult, setSearchResult] = useState("");
 
   useEffect(() => {
@@ -17,11 +17,13 @@ const Body = () => {
     );
 
     const json = await Data.json();
-   
-    setListOfRestaurants(
+
+    const restaurants =
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants || []
-    );
+        ?.restaurants || [];
+
+    setListOfRestaurants(restaurants);
+    setFilteredRestaurants(restaurants); // Set initial filtered list to the full list
   };
 
   //Conditional Rendering
@@ -32,6 +34,13 @@ const Body = () => {
       </>
     );
   }
+
+  const handleSearch = () => {
+    const filteredList = listOfRestaurants.filter((res) =>
+      res.info.name.toLowerCase().includes(searchResult.toLowerCase())
+    );
+    setFilteredRestaurants(filteredList);
+  };
 
   return (
     <div className="body-container">
@@ -45,30 +54,23 @@ const Body = () => {
               setSearchResult(e.target.value);
             }}
           />
-          <button
-            onClick={() => {
-              console.log(searchResult);
-            }}
-          >
-            Search
-          </button>
+          <button onClick={handleSearch}>Search</button>
         </div>
         <button
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4.3
             );
-            setListOfRestaurants(filteredList);
+            setFilteredRestaurants(filteredList);
           }}
           className="filter-btn"
-         
         >
           Top rated Restaurants
         </button>
       </div>
 
       <div className="res-container">
-        {listOfRestaurants.map((restaurant) => (
+        {filteredRestaurants.map((restaurant) => (
           <RestaurentCard key={restaurant.info.id} resData={restaurant.info} />
         ))}
       </div>

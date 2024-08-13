@@ -21,6 +21,7 @@ const Body = () => {
     const restaurants =
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || [];
+        
 
     setListOfRestaurants(restaurants);
     setFilteredRestaurants(restaurants); // Set initial filtered list to the full list

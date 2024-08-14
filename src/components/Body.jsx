@@ -12,14 +12,15 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const Data = await fetch(
+    /*const Data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8496217&lng=81.0072193&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-
+    );*/
+   
+    const Data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.6632346&lng=76.647047&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
     const json = await Data.json();
 
     const restaurants =
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || [];
         
 

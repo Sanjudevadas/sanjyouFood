@@ -14,8 +14,9 @@ const RestaurentCard = (props) => {
         <span className="rating">
           <span className="rating-star">⭐</span>{resData.avgRating}
         </span>
-          🕛 {resData.sla.deliveryTime} mins
+       : 💵  {resData.costForTwo} : 🕛 {resData.sla.deliveryTime} mins
       </h6>
+     
     </div>
   );
 };
@@ -30,7 +31,8 @@ RestaurentCard.propTypes = {
     locality: PropTypes.string.isRequired,
     sla: PropTypes.shape({
       deliveryTime: PropTypes.number.isRequired
-    }).isRequired
+    }).isRequired,
+    costForTwo: PropTypes.string.isRequired, // Add this line
   }).isRequired
 };
 

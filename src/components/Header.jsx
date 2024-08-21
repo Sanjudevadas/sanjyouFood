@@ -6,7 +6,7 @@ const Header = () => {
 
 useEffect(()=>{
   console.log("UseEffect Called")
-},[])
+},[btnName])
   return (
     <div className="header">
       <div className="logo-container">

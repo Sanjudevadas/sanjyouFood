@@ -26,7 +26,7 @@ RestaurentCard.propTypes = {
     name: PropTypes.string.isRequired,
     cloudinaryImageId: PropTypes.string.isRequired,
     cuisines: PropTypes.arrayOf(PropTypes.string).isRequired,
-    avgRating: PropTypes.string.isRequired,
+    avgRating: PropTypes.number.isRequired,
     areaName: PropTypes.string.isRequired,
     locality: PropTypes.string.isRequired,
     sla: PropTypes.shape({

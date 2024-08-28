@@ -1,8 +1,11 @@
-
+import { useRouteError } from 'react-router-dom';
 
 import kittenImage from '../assets/kitten.png'// Make sure to have an image of a kitten in your assets folder
 
 const Error = () => {
+
+    const err = useRouteError();
+    console.log("error component ",err)
     return (
         <div className="error-container">
             <div className="error-content">
